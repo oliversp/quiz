@@ -5,6 +5,22 @@ body                 { font: 16px Georgia, serif; }
 #page-wrap > .main   { border: 1px solid #999; padding: 1%; 
 	                   margin-bottom: 1px; color: black;}
 
+#FotoC {
+    width: 25%;
+    float:left;
+}
+#FotoC img {
+	border-radius: 60px;
+	height: auto;
+	width: 40%;
+	border: 1px solid;
+}
+#name{
+float: left;
+padding: 10px;
+}
+					   
+
 section > div        { padding: 20px; }
 header, nav, section { background: #eee; text-align: center;}
 footer               { background: #eee; text-align: center;}
