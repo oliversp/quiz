@@ -26,9 +26,9 @@ exports.load = function(req, res, next, quizId) {
 exports.index = function(req, res) {
 		  
  var _quiz	= req.query.search || "Todas" ;
- var _search = (_quiz !="Todas"  ? _quiz : '');
+ var _search = (_quiz !="Todas"  ? _quiz.toLowerCase() : '');
 	
- models.Quiz.findAll({where: ["pregunta like ?", ("%"+ _search+"%").replace(/\s/g,"%")]
+ models.Quiz.findAll({where: ["lower(pregunta) like ?", ("%"+ _search+"%").replace(/\s/g,"%")]
 							 ,order: [['pregunta', 'ASC']]	}).then(
     function(quizes) {
 	   res.render('quizes/index', { quizes: quizes, quiz: _quiz});
