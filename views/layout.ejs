@@ -27,12 +27,19 @@
 	 <span><a href="/author">Créditos</a></span>
   </nav>
 
-  <section class="main" id="s1">
-    <div>
-      <%- body %>
-    </div>
-  </section>
+ <section class="main" id="s1">
+    <% if (errors.length) { %>
+      <span id='ErrorMsgs'>
+        Corregir errores:<br/>
+        <% for (var i in errors) { %>
+           <span> <%= errors[i].message %> </span><br/>
+        <% } %>
+      </span>
+    <% } %>
 
+    <div><%- body %></div>
+  </section>
+  
   <footer class="main" id="f1">
  <div>
       <a href="http://es.wikipedia.org/wiki/Quiz">
