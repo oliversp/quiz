@@ -30,14 +30,15 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+
 // Helpers dinamicos:
 app.use(function(req, res, next) {
 
   // guardar path en session.redir para despues de login
   if (!req.path.match(/\/login|\/logout/)) {
     req.session.redir = req.path;
-  }
-
+	}
+   
   // Hacer visible req.session en las vistas
   res.locals.session = req.session;
   next();
