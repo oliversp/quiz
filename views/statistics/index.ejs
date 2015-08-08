@@ -1,0 +1,32 @@
+<header id="cabecera">
+    <h1>Estadísticas</h1>
+</header>
+
+<div id="tabla" > 
+    <table >
+    <thead>
+        <tr><th>Propiedad</th><th>Valor</th></tr> 
+     </thead>
+      <tbody id="content_table">
+		<% 	
+			for (var i in statistics) { 
+		%><tr>
+				<td >
+					<%= statistics[i].question %>
+				</td>
+				<td >
+					<%= statistics[i].dato %>
+				</td>
+		</tr>
+<% 	} %>
+	  
+	  </tbody>  
+     </table>
+ </div>
+
+
+<table>
+
+	
+
+</table>

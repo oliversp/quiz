@@ -55,10 +55,10 @@ exports.SessionTimeOut =function (req, res, next) {
 
 if (req.session.user){
 	
-	if (_actual.getTime() - req.session.user.timeout > 10000){
+	if (_actual.getTime() - req.session.user.timeout > 120000){
 		   delete req.session.user;
 		   delete req.session.timeout;
-		   res.render('sessions/expired', {errors: [{"message": 'SessionTimeOut. Ha supuerado los dos minutos de inactividad.'}]} );
+		   res.render('sessions/expired', {errors: [{"message": 'SessionTimeOut. Ha superado los dos minutos de inactividad.'}]} );
     }
 	 else{
 		 req.session.user.timeout=new Date().getTime();
